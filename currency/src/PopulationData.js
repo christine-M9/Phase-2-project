@@ -14,14 +14,14 @@ const PopulationData = () => {
         return response.json();
       })
       .then((data) => {
-        // lets assume the data is an object with a "data" property containing the array of population data
+        // Assuming the data is an object with a "data" property containing the array of population data
         if (data && data.data) {
           setPopulationData(data.data);
         }
       })
      
   };
-// Use of bracket notation 
+       // Use of bracket notation 
   return (
     <div>
       {populationData.map((item) => (
