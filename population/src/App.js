@@ -12,11 +12,17 @@ const App = () => {
     }
   };
 
+  const handleRelease = (populationBot) => {
+    setEnlistedPopulation((prevEnlisted) =>
+      prevEnlisted.filter((bot) => bot["ID Year"] !== populationBot["ID Year"])
+    );
+  };
+
   return (
     <div>
       <h1>POPULATION DATA</h1>
       <PopulationData onEnlist={handleEnlist} />
-      <PopulationArmy enlistedPopulation={enlistedPopulation} />
+      <PopulationArmy enlistedPopulation={enlistedPopulation} onRelease={handleRelease} />
     </div>
   );
 };

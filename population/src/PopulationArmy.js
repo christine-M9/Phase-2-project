@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PopulationArmy = ({ enlistedPopulation }) => {
+const PopulationArmy = ({ enlistedPopulation, onRelease }) => {
   return (
     <div>
       <h2>POPULATION ARMY</h2>
@@ -12,6 +12,7 @@ const PopulationArmy = ({ enlistedPopulation }) => {
           <p>Year: {item.Year}</p>
           <p>Population: {item.Population}</p>
           <p>Slug Nation: {item["Slug Nation"]}</p>
+          <button onClick={() => onRelease(item)}>Release</button>
         </div>
       ))}
     </div>
