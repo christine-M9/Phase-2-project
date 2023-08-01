@@ -15,9 +15,7 @@ const PopulationDataSearch = ({ onEnlist }) => {
       .then((data) => {
         if (data && data.data) {
           setPopulationData(data.data);
-          
-    // Setting filtered data to all data initially.
-          setFilteredData(data.data); 
+          setFilteredData(data.data);
         }
       });
   };
