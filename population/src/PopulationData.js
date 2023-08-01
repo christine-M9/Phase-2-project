@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
+// function component
 const PopulationData = ({ onEnlist }) => {
   const [populationData, setPopulationData] = useState([]);
 
   useEffect(() => {
     fetchPopulationData();
   }, []);
-
+// GET request from API
   const fetchPopulationData = () => {
     fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
       .then((response) => response.json())
@@ -18,7 +19,7 @@ const PopulationData = ({ onEnlist }) => {
         }
       });
   };
-
+// JSX
   return (
     <div>
       {populationData.map((item) => (
