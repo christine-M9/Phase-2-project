@@ -11,7 +11,8 @@ const PopulationData = ({ onEnlist }) => {
     fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
       .then((response) => response.json())
       .then((data) => {
-        // Assuming the data is an object with a "data" property containing the array of population data
+
+ // Assuming the data is an object with a "data" property containing the array of population data
         if (data && data.data) {
           setPopulationData(data.data);
         }
