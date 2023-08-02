@@ -18,8 +18,8 @@ const PopulationData = ({ onEnlist }) => {
       })
       .catch((apiError) => {
         console.error("Failed to fetch data from the API:", apiError);
-    // Fetching from the JSON server if API request fails
-        fetch('/population.json') 
+        // Fetching from the JSON server if API request fails
+        fetch('/population.json')
           .then((response) => response.json())
           .then((data) => {
             if (data && data.populationData) {

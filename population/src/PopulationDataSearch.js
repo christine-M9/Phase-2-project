@@ -8,7 +8,8 @@ const PopulationDataSearch = ({ onEnlist }) => {
   useEffect(() => {
     fetchPopulationData();
   }, []);
-// GET request
+
+  // GET request
   const fetchPopulationData = () => {
     fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
       .then((response) => response.json())
