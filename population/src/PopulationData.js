@@ -1,25 +1,37 @@
 import React, { useEffect, useState } from 'react';
 
-// function component
 const PopulationData = ({ onEnlist }) => {
   const [populationData, setPopulationData] = useState([]);
 
   useEffect(() => {
     fetchPopulationData();
   }, []);
-// GET request from API
+
   const fetchPopulationData = () => {
+    // Try fetching from the API
     fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
       .then((response) => response.json())
       .then((data) => {
-
- // Assuming the data is an object with a "data" property containing the array of population data
         if (data && data.data) {
           setPopulationData(data.data);
         }
+      })
+      .catch((apiError) => {
+        console.error("Failed to fetch data from the API:", apiError);
+    // Fetch from the JSON server if API request fails
+        fetch('/population.json') 
+          .then((response) => response.json())
+          .then((data) => {
+            if (data && data.populationData) {
+              setPopulationData(data.populationData);
+            }
+          })
+          .catch((jsonError) => {
+            console.error("Failed to fetch data from the JSON server:", jsonError);
+          });
       });
   };
-// JSX
+
   return (
     <div>
       {populationData.map((item) => (

@@ -1,0 +1,21 @@
+{
+    "populationData": [
+      {
+        "ID Year": 1,
+        "ID Nation": 101,
+        "Nation": "Country A",
+        "Year": 2022,
+        "Population": 100000,
+        "Slug Nation": "country-a"
+      },
+      {
+        "ID Year": 2,
+        "ID Nation": 102,
+        "Nation": "Country B",
+        "Year": 2022,
+        "Population": 150000,
+        "Slug Nation": "country-b"
+      }
+    ]
+  }
+  

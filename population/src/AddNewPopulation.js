@@ -19,20 +19,35 @@ const AddNewPopulation = ({ onAddPopulation }) => {
   };
 
   const handleSubmit = () => {
-    onAddPopulation(newPopulationData);
-    setNewPopulationData({
-      "ID Year": "",
-      "ID Nation": "",
-      "Nation": "",
-      "Year": "",
-      "Population": "",
-      "Slug Nation": ""
-    });
+    console.log("Submitting data:", newPopulationData); // Debugging line
+    fetch('http://localhost:3000/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newPopulationData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Response from server:", data); // Debugging line
+        onAddPopulation(data); // After the JSON server returns the newly added data with an ID
+        setNewPopulationData({
+          "ID Year": "",
+          "ID Nation": "",
+          "Nation": "",
+          "Year": "",
+          "Population": "",
+          "Slug Nation": ""
+        });
+      })
+      .catch((error) => {
+        console.error("Failed to add data to the JSON server:", error);
+      });
   };
 
   return (
     <div>
-      <h2>Add Population</h2>
+      <h2>ADD POPULATION</h2>
       <input
         type="text"
         placeholder="ID Year"
@@ -81,4 +96,3 @@ const AddNewPopulation = ({ onAddPopulation }) => {
 };
 
 export default AddNewPopulation;
-

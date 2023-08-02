@@ -20,6 +20,7 @@ const App = () => {
   };
 
   const handleAddPopulation = (newPopulationData) => {
+    // set when the server returns the newly added data with an ID
     setNewlyAddedPopulation((prevNewlyAdded) => [...prevNewlyAdded, newPopulationData]);
   };
 
@@ -28,8 +29,8 @@ const App = () => {
       <h1>POPULATION DATA</h1>
       <AddNewPopulation onAddPopulation={handleAddPopulation} />
       <h2>ADDED POPULATION</h2>
-      {newlyAddedPopulation.map((item) => (
-        <div key={item["ID Year"]}>
+      {newlyAddedPopulation.map((item, index) => (
+        <div key={index}>
           <h3>ID Year: {item["ID Year"]}</h3>
           <p>ID Nation: {item["ID Nation"]}</p>
           <p>Nation: {item.Nation}</p>

@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "ID Year": "2014",
+      "ID Nation": "067887",
+      "Nation": "kenya",
+      "Year": "2014",
+      "Population": "6738903987",
+      "Slug Nation": "kenya",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
