@@ -1,21 +1,22 @@
 import React from 'react';
+import { Box, Typography, Button } from '@mui/material';
 
 const PopulationArmy = ({ enlistedPopulation, onRelease }) => {
   return (
-    <div>
-      <h2>POPULATION ARMY</h2>
+    <Box>
+      <Typography variant="h6">POPULATION ARMY</Typography>
       {enlistedPopulation.map((item) => (
-        <div key={item["ID Year"]}>
-          <h3>ID Year: {item["ID Year"]}</h3>
-          <p>ID Nation: {item["ID Nation"]}</p>
-          <p>Nation: {item.Nation}</p>
-          <p>Year: {item.Year}</p>
-          <p>Population: {item.Population}</p>
-          <p>Slug Nation: {item["Slug Nation"]}</p>
-          <button onClick={() => onRelease(item)}>Release</button>
-        </div>
+        <Box key={item["ID Year"]} sx={{ border: 1, p: 2, my: 2, backgroundColor: '#f0f0f0' }}>
+          <Typography>ID Year: {item["ID Year"]}</Typography>
+          <Typography>ID Nation: {item["ID Nation"]}</Typography>
+          <Typography>Nation: {item.Nation}</Typography>
+          <Typography>Year: {item.Year}</Typography>
+          <Typography>Population: {item.Population}</Typography>
+          <Typography>Slug Nation: {item["Slug Nation"]}</Typography>
+          <Button onClick={() => onRelease(item)}>Release</Button>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 

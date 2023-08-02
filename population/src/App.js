@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import { Container, AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import PopulationData from './PopulationData';
 import PopulationDataSearch from './PopulationDataSearch';
 import AddNewPopulation from './AddNewPopulation';
 import PopulationArmy from './PopulationArmy';
 
 const App = () => {
-  const [enlistedPopulation, setEnlistedPopulation] = useState([]);
-  const [newlyAddedPopulation, setNewlyAddedPopulation] = useState([]);
+  const [enlistedPopulation, setEnlistedPopulation] = React.useState([]);
+  const [newlyAddedPopulation, setNewlyAddedPopulation] = React.useState([]);
 
   const handleEnlist = (populationBot) => {
     if (!enlistedPopulation.find((bot) => bot["ID Year"] === populationBot["ID Year"])) {
@@ -28,44 +29,49 @@ const App = () => {
 
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/data">Population Data</Link>
-            </li>
-          </ul>
-        </nav>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            C.J's Population App
+          </Typography>
+          <Button color="inherit" component={Link} to="/">
+            Home
+          </Button>
+          <Button color="inherit" component={Link} to="/data">
+            Population Data
+          </Button>
+        </Toolbar>
+      </AppBar>
 
+      <Container sx={{ mt: 2 }}>
         <Routes>
           <Route path="/" element={<h1>WELCOME TO C.J'S POPULATION APP.</h1>} />
           <Route
             path="/data"
             element={
-              <div>
+              <Box>
                 <h1>POPULATION DATA</h1>
                 <AddNewPopulation onAddPopulation={handleAddPopulation} />
-                <h2>ADDED POPULATION</h2>
-                {newlyAddedPopulation.map((item, index) => (
-                  <div key={index}>
-                    <h3>ID Year: {item["ID Year"]}</h3>
-                    <p>ID Nation: {item["ID Nation"]}</p>
-                    <p>Nation: {item.Nation}</p>
-                    <p>Year: {item.Year}</p>
-                    <p>Population: {item.Population}</p>
-                    <p>Slug Nation: {item["Slug Nation"]}</p>
-                  </div>
-                ))}
+                <Box>
+                  <h2>ADDED POPULATION</h2>
+                  {newlyAddedPopulation.map((item, index) => (
+                    <Box key={index} sx={{ border: 1, p: 2, my: 2, backgroundColor: '#f0f0f0' }}>
+                      <Typography variant="h6">ID Year: {item["ID Year"]}</Typography>
+                      <Typography>ID Nation: {item["ID Nation"]}</Typography>
+                      <Typography>Nation: {item.Nation}</Typography>
+                      <Typography>Year: {item.Year}</Typography>
+                      <Typography>Population: {item.Population}</Typography>
+                      <Typography>Slug Nation: {item["Slug Nation"]}</Typography>
+                    </Box>
+                  ))}
+                </Box>
                 <PopulationDataSearch onEnlist={handleEnlist} />
                 <PopulationArmy enlistedPopulation={enlistedPopulation} onRelease={handleRelease} />
-              </div>
+              </Box>
             }
           />
         </Routes>
-      </div>
+      </Container>
     </Router>
   );
 };

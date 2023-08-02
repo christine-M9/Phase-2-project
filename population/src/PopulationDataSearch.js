@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Box, Typography, Button } from '@mui/material';
 
 const PopulationDataSearch = ({ onEnlist }) => {
-  const [populationData, setPopulationData] = useState([]);
-  const [searchYear, setSearchYear] = useState('');
-  const [filteredData, setFilteredData] = useState([]);
+  const [populationData, setPopulationData] = React.useState([]);
+  const [searchYear, setSearchYear] = React.useState('');
+  const [filteredData, setFilteredData] = React.useState([]);
 
   useEffect(() => {
     fetchPopulationData();
@@ -29,7 +30,7 @@ const PopulationDataSearch = ({ onEnlist }) => {
   }, [searchYear, populationData]);
 
   return (
-    <div>
+    <Box>
       <input
         type="text"
         placeholder="Search data by Year"
@@ -37,17 +38,16 @@ const PopulationDataSearch = ({ onEnlist }) => {
         onChange={(e) => setSearchYear(e.target.value)}
       />
       {filteredData.map((item) => (
-        <div key={item["ID Year"]}>
-          <h3>ID Year: {item["ID Year"]}</h3>
-          <p>ID Nation: {item["ID Nation"]}</p>
-          <p>Nation: {item.Nation}</p>
-          <p>Year: {item.Year}</p>
-          <p>Population: {item.Population}</p>
-          <p>Slug Nation: {item["Slug Nation"]}</p>
-          <button onClick={() => onEnlist(item)}>Enlist</button>
-        </div>
+        <Box key={item["ID Year"]} sx={{ border: 1, p: 2, my: 2, cursor: 'pointer', backgroundColor: '#f0f0f0' }} onClick={() => onEnlist(item)}>
+          <Typography variant="h6">ID Year: {item["ID Year"]}</Typography>
+          <Typography>ID Nation: {item["ID Nation"]}</Typography>
+          <Typography>Nation: {item.Nation}</Typography>
+          <Typography>Year: {item.Year}</Typography>
+          <Typography>Population: {item.Population}</Typography>
+          <Typography>Slug Nation: {item["Slug Nation"]}</Typography>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 

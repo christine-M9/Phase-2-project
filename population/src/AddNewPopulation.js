@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Box, TextField, Button, Typography } from '@mui/material';
 
 const AddNewPopulation = ({ onAddPopulation }) => {
-  const [newPopulationData, setNewPopulationData] = useState({
+  const [newPopulationData, setNewPopulationData] = React.useState({
     "ID Year": "",
     "ID Nation": "",
     "Nation": "",
@@ -30,7 +31,7 @@ const AddNewPopulation = ({ onAddPopulation }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Response from server:", data); // Debugging line
-        onAddPopulation(data); // After the JSON server returns the newly added data with an ID it sets new
+        onAddPopulation(data); // After the JSON server returns the newly added data with an ID, it sets new
         setNewPopulationData({
           "ID Year": "",
           "ID Nation": "",
@@ -46,52 +47,48 @@ const AddNewPopulation = ({ onAddPopulation }) => {
   };
 
   return (
-    <div>
-      <h2>ADD POPULATION</h2>
-      <input
-        type="text"
-        placeholder="ID Year"
-        name="ID Year"
-        value={newPopulationData["ID Year"]}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="ID Nation"
-        name="ID Nation"
-        value={newPopulationData["ID Nation"]}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Nation"
-        name="Nation"
-        value={newPopulationData["Nation"]}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Year"
-        name="Year"
-        value={newPopulationData["Year"]}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Population"
-        name="Population"
-        value={newPopulationData["Population"]}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Slug Nation"
-        name="Slug Nation"
-        value={newPopulationData["Slug Nation"]}
-        onChange={handleChange}
-      />
-      <button onClick={handleSubmit}>Add Population</button>
-    </div>
+    <Box>
+      <Typography variant="h6">ADD POPULATION</Typography>
+      <Box>
+        <TextField
+          label="ID Year"
+          name="ID Year"
+          value={newPopulationData["ID Year"]}
+          onChange={handleChange}
+        />
+        <TextField
+          label="ID Nation"
+          name="ID Nation"
+          value={newPopulationData["ID Nation"]}
+          onChange={handleChange}
+        />
+        <TextField
+          label="Nation"
+          name="Nation"
+          value={newPopulationData["Nation"]}
+          onChange={handleChange}
+        />
+        <TextField
+          label="Year"
+          name="Year"
+          value={newPopulationData["Year"]}
+          onChange={handleChange}
+        />
+        <TextField
+          label="Population"
+          name="Population"
+          value={newPopulationData["Population"]}
+          onChange={handleChange}
+        />
+        <TextField
+          label="Slug Nation"
+          name="Slug Nation"
+          value={newPopulationData["Slug Nation"]}
+          onChange={handleChange}
+        />
+      </Box>
+      <Button onClick={handleSubmit} variant="contained" color="primary">Add Population</Button>
+    </Box>
   );
 };
 

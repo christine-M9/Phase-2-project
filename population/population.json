@@ -292,6 +292,33 @@
       "Population": "4567843",
       "Slug Nation": "Gabon",
       "id": 33
+    },
+    {
+      "ID Year": "",
+      "ID Nation": "",
+      "Nation": "",
+      "Year": "",
+      "Population": "",
+      "Slug Nation": "",
+      "id": 34
+    },
+    {
+      "ID Year": "",
+      "ID Nation": "",
+      "Nation": "",
+      "Year": "",
+      "Population": "",
+      "Slug Nation": "",
+      "id": 35
+    },
+    {
+      "ID Year": "2003",
+      "ID Nation": "46253",
+      "Nation": "S.Africa",
+      "Year": "2003",
+      "Population": "2678438",
+      "Slug Nation": "S.Africa",
+      "id": 36
     }
   ],
   "comments": [
