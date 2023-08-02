@@ -58,6 +58,15 @@
       "Population": "6738903987",
       "Slug Nation": "kenya",
       "id": 7
+    },
+    {
+      "ID Year": "2020",
+      "ID Nation": "01722",
+      "Nation": "Denmark",
+      "Year": "2020",
+      "Population": "32182373",
+      "Slug Nation": "Denmark",
+      "id": 8
     }
   ],
   "comments": [
