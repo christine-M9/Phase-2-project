@@ -1,11 +1,12 @@
 import React from 'react';
 
+// functional component
 const PopulationArmy = ({ enlistedPopulation, onRelease }) => {
 
   return (
     <div>
       <h2>POPULATION ARMY</h2> 
-  {/* iterating through the array(enlisted population) */}
+      {/* itterating through the array(enListed population) */}
       {enlistedPopulation.map((item) => (
         <div key={item["ID Year"]}>
           <h3>ID Year: {item["ID Year"]}</h3>

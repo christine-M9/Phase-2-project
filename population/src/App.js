@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import PopulationData from './PopulationData';
+import PopulationDataSearch from './PopulationDataSearch';
 import PopulationArmy from './PopulationArmy';
 import AddNewPopulation from './AddNewPopulation';
-// import { Route, Routes } from 'react-router-dom';
-
 
 const App = () => {
   const [enlistedPopulation, setEnlistedPopulation] = useState([]);
@@ -22,14 +20,13 @@ const App = () => {
   };
 
   const handleAddPopulation = (newPopulationData) => {
-    // set when the server returns the newly added data with an ID
+  // set when the server returns the newly added data with an ID
     setNewlyAddedPopulation((prevNewlyAdded) => [...prevNewlyAdded, newPopulationData]);
   };
-  
+// JSX
   return (
-    <div> 
+    <div>
       <h1>POPULATION DATA</h1>
-      
       <AddNewPopulation onAddPopulation={handleAddPopulation} />
       <h2>ADDED POPULATION</h2>
       {newlyAddedPopulation.map((item, index) => (
@@ -42,12 +39,10 @@ const App = () => {
           <p>Slug Nation: {item["Slug Nation"]}</p>
         </div>
       ))}
-      <PopulationData onEnlist={handleEnlist} />
+      <PopulationDataSearch onEnlist={handleEnlist} />
       <PopulationArmy enlistedPopulation={enlistedPopulation} onRelease={handleRelease} />
     </div>
-
   );
 };
-
 
 export default App;

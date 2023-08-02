@@ -76,6 +76,24 @@
       "Population": "24422677",
       "Slug Nation": "Sweden",
       "id": 9
+    },
+    {
+      "ID Year": "2019",
+      "ID Nation": "08276374",
+      "Nation": "Kenya",
+      "Year": "2019",
+      "Population": "234726265252",
+      "Slug Nation": "Kenya",
+      "id": 10
+    },
+    {
+      "ID Year": "2016",
+      "ID Nation": "01345",
+      "Nation": "Moscow",
+      "Year": "2016",
+      "Population": "356478546",
+      "Slug Nation": "Moscow",
+      "id": 11
     }
   ],
   "comments": [
