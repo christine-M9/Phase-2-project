@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PopulationData from './PopulationData';
 import PopulationArmy from './PopulationArmy';
 import AddNewPopulation from './AddNewPopulation';
-import { Route, Routes } from 'react-router-dom';
+// import { Route, Routes } from 'react-router-dom';
 
 
 const App = () => {
@@ -25,10 +25,11 @@ const App = () => {
     // set when the server returns the newly added data with an ID
     setNewlyAddedPopulation((prevNewlyAdded) => [...prevNewlyAdded, newPopulationData]);
   };
-
+  
   return (
-    <div>
+    <div> 
       <h1>POPULATION DATA</h1>
+      
       <AddNewPopulation onAddPopulation={handleAddPopulation} />
       <h2>ADDED POPULATION</h2>
       {newlyAddedPopulation.map((item, index) => (
@@ -44,7 +45,9 @@ const App = () => {
       <PopulationData onEnlist={handleEnlist} />
       <PopulationArmy enlistedPopulation={enlistedPopulation} onRelease={handleRelease} />
     </div>
+
   );
 };
+
 
 export default App;
