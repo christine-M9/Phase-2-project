@@ -30,7 +30,7 @@ const AddNewPopulation = ({ onAddPopulation }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Response from server:", data); // Debugging line
-        onAddPopulation(data); // After the JSON server returns the newly added data with an ID
+        onAddPopulation(data); // After the JSON server returns the newly added data with an ID it sets new
         setNewPopulationData({
           "ID Year": "",
           "ID Nation": "",

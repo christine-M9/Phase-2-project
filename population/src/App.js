@@ -20,10 +20,10 @@ const App = () => {
   };
 
   const handleAddPopulation = (newPopulationData) => {
-    // set when the server returns the newly added data with an ID
+  // set when the server returns the newly added data with an ID
     setNewlyAddedPopulation((prevNewlyAdded) => [...prevNewlyAdded, newPopulationData]);
   };
-
+// JSX
   return (
     <div>
       <h1>POPULATION DATA</h1>
