@@ -1,29 +1,47 @@
 import React, { useState } from 'react';
 import PopulationDataSearch from './PopulationDataSearch';
 import PopulationArmy from './PopulationArmy';
-// state management
+import AddNewPopulation from './AddNewPopulation';
+
 const App = () => {
   const [enlistedPopulation, setEnlistedPopulation] = useState([]);
-// handle enList function
+  const [newlyAddedPopulation, setNewlyAddedPopulation] = useState([]);
+
   const handleEnlist = (populationBot) => {
     if (!enlistedPopulation.find((bot) => bot["ID Year"] === populationBot["ID Year"])) {
       setEnlistedPopulation((prevEnlisted) => [...prevEnlisted, populationBot]);
     }
   };
-// handle release function
+
   const handleRelease = (populationBot) => {
     setEnlistedPopulation((prevEnlisted) =>
       prevEnlisted.filter((bot) => bot["ID Year"] !== populationBot["ID Year"])
     );
   };
-// Rendering the UI(JSX)
+
+  const handleAddPopulation = (newPopulationData) => {
+    setNewlyAddedPopulation((prevNewlyAdded) => [...prevNewlyAdded, newPopulationData]);
+  };
+
   return (
     <div>
       <h1>POPULATION DATA</h1>
+      <AddNewPopulation onAddPopulation={handleAddPopulation} />
+      <h2>ADDED POPULATION</h2>
+      {newlyAddedPopulation.map((item) => (
+        <div key={item["ID Year"]}>
+          <h3>ID Year: {item["ID Year"]}</h3>
+          <p>ID Nation: {item["ID Nation"]}</p>
+          <p>Nation: {item.Nation}</p>
+          <p>Year: {item.Year}</p>
+          <p>Population: {item.Population}</p>
+          <p>Slug Nation: {item["Slug Nation"]}</p>
+        </div>
+      ))}
       <PopulationDataSearch onEnlist={handleEnlist} />
       <PopulationArmy enlistedPopulation={enlistedPopulation} onRelease={handleRelease} />
     </div>
   );
 };
-// exporting
+
 export default App;
