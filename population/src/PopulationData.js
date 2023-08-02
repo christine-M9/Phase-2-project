@@ -6,9 +6,8 @@ const PopulationData = ({ onEnlist }) => {
   useEffect(() => {
     fetchPopulationData();
   }, []);
-
+// GET request
   const fetchPopulationData = () => {
-    // Try fetching from the API
     fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
       .then((response) => response.json())
       .then((data) => {
@@ -18,7 +17,7 @@ const PopulationData = ({ onEnlist }) => {
       })
       .catch((apiError) => {
         console.error("Failed to fetch data from the API:", apiError);
-    // Fetch from the JSON server if API request fails
+        // Fetch from the JSON server if API request fails
         fetch('/population.json') 
           .then((response) => response.json())
           .then((data) => {
@@ -48,5 +47,5 @@ const PopulationData = ({ onEnlist }) => {
     </div>
   );
 };
-
+// eporting
 export default PopulationData;

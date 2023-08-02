@@ -67,6 +67,15 @@
       "Population": "32182373",
       "Slug Nation": "Denmark",
       "id": 8
+    },
+    {
+      "ID Year": "2010",
+      "ID Nation": "192443",
+      "Nation": "Sweden",
+      "Year": "2010",
+      "Population": "24422677",
+      "Slug Nation": "Sweden",
+      "id": 9
     }
   ],
   "comments": [

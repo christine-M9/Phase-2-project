@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-// function component
 const PopulationDataSearch = ({ onEnlist }) => {
   const [populationData, setPopulationData] = useState([]);
   const [searchYear, setSearchYear] = useState('');
@@ -9,7 +8,7 @@ const PopulationDataSearch = ({ onEnlist }) => {
   useEffect(() => {
     fetchPopulationData();
   }, []);
-// GET request{data fetching from API}
+// GET request
   const fetchPopulationData = () => {
     fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
       .then((response) => response.json())
@@ -20,14 +19,14 @@ const PopulationDataSearch = ({ onEnlist }) => {
         }
       });
   };
-// Filtering Data Based on Search Year:
+
   useEffect(() => {
     const filteredResults = populationData.filter(
       (item) => item.Year.toString() === searchYear
     );
     setFilteredData(searchYear === '' ? populationData : filteredResults);
   }, [searchYear, populationData]);
-// Returns JSX(Rendering the user interface)
+
   return (
     <div>
       <input
@@ -44,8 +43,7 @@ const PopulationDataSearch = ({ onEnlist }) => {
           <p>Year: {item.Year}</p>
           <p>Population: {item.Population}</p>
           <p>Slug Nation: {item["Slug Nation"]}</p>
-{/* When the "Enlist" button is clicked, the onEnlist prop function is called with the selected population data item as an argument(EVENT HANDLING) */}
-           <button onClick={() => onEnlist(item)}>Enlist</button>  
+          <button onClick={() => onEnlist(item)}>Enlist</button>
         </div>
       ))}
     </div>
