@@ -8,7 +8,7 @@ const PopulationData = ({ onEnlist }) => {
   }, []);
 
   const fetchPopulationData = () => {
-    // Trying fetching from the API
+    // Trying fetching data from the API
     fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
       .then((response) => response.json())
       .then((data) => {

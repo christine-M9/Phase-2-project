@@ -94,6 +94,15 @@
       "Population": "356478546",
       "Slug Nation": "Moscow",
       "id": 11
+    },
+    {
+      "ID Year": "2021",
+      "ID Nation": "127438",
+      "Nation": "America",
+      "Year": "2021",
+      "Population": "1328472445",
+      "Slug Nation": "America",
+      "id": 12
     }
   ],
   "comments": [
