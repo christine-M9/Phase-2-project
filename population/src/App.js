@@ -33,7 +33,7 @@ const App = () => {
       <AppBar position="static" sx={{ backgroundColor: '#007bff' }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            C.J's POPULATION APP
+            CEEJAY'S POPULATION APP
           </Typography>
           <Button color="inherit" component={Link} to="/">
             Home
