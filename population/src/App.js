@@ -1,3 +1,4 @@
+// App.js
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import { Container, AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
@@ -6,6 +7,7 @@ import PopulationData from './PopulationData';
 import PopulationDataSearch from './PopulationDataSearch';
 import AddNewPopulation from './AddNewPopulation';
 import PopulationArmy from './PopulationArmy';
+import About from './About';
 
 const App = () => {
   const [enlistedPopulation, setEnlistedPopulation] = React.useState([]);
@@ -30,16 +32,19 @@ const App = () => {
 
   return (
     <Router>
-      <AppBar position="static" sx={{ backgroundColor: '#007bff' }}>
+      <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            CEEJAY'S POPULATION APP
+            C.J's POPULATION APP
           </Typography>
           <Button color="inherit" component={Link} to="/">
             Home
           </Button>
           <Button color="inherit" component={Link} to="/data">
             Population Data
+          </Button>
+          <Button color="inherit" component={Link} to="/about">
+            About
           </Button>
         </Toolbar>
       </AppBar>
@@ -51,28 +56,13 @@ const App = () => {
             path="/data"
             element={
               <Box>
-                <Typography variant="h4" sx={{ mb: 3, color: '#007bff' }}>
-                  POPULATION DATA
-                </Typography>
+                <h1>POPULATION DATA</h1>
                 <AddNewPopulation onAddPopulation={handleAddPopulation} />
                 <Box>
-                  <Typography variant="h5" sx={{ mt: 4, mb: 2 }}>
-                    ADDED POPULATION
-                  </Typography>
+                  <h2>ADDED POPULATION</h2>
                   {newlyAddedPopulation.map((item, index) => (
-                    <Box
-                      key={index}
-                      sx={{
-                        border: 1,
-                        p: 2,
-                        my: 2,
-                        backgroundColor: '#f0f0f0',
-                        '&:hover': {
-                          backgroundColor: '#e0e0e0',
-                        },
-                      }}
-                    >
-                      <Typography>ID Year: {item["ID Year"]}</Typography>
+                    <Box key={index} sx={{ border: 1, p: 2, my: 2, backgroundColor: '#f0f0f0' }}>
+                      <Typography variant="h6">ID Year: {item["ID Year"]}</Typography>
                       <Typography>ID Nation: {item["ID Nation"]}</Typography>
                       <Typography>Nation: {item.Nation}</Typography>
                       <Typography>Year: {item.Year}</Typography>
@@ -86,6 +76,7 @@ const App = () => {
               </Box>
             }
           />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Container>
     </Router>
