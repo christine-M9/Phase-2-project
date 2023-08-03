@@ -1,5 +1,7 @@
+// Home.js
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -15,13 +17,20 @@ const Home = () => {
         textAlign: 'center',
       }}
     >
-      <Typography variant="h4" sx={{ mb: 3, color: '#007bff' }}>
+      <Typography variant="h4" sx={{ mb: 3 }}>
         WELCOME TO CEEJAY'S POPULATION DATA APP
       </Typography>
       <Typography variant="body1" sx={{ mb: 3 }}>
         Explore population data from different countries and years.
       </Typography>
-      <Button variant="contained" color="primary" size="large" sx={{ mb: 3 }}>
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        sx={{ mb: 3 }}
+        component={Link}
+        to="/data"
+      >
         Get Started
       </Button>
       <Typography variant="body1">
