@@ -1,6 +1,7 @@
 // About.js
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -14,24 +15,27 @@ const About = () => {
         backgroundColor: '#f0f0f0',
         color: '#000',
         textAlign: 'center',
-        padding: '20px',
       }}
     >
       <Typography variant="h4" sx={{ mb: 3 }}>
-        About C.J's Population App
+        ABOUT CEEJAY'S POPULATION DATA APP
       </Typography>
       <Typography variant="body1" sx={{ mb: 3 }}>
-        C.J's Population App is a simple web application that allows you to explore population data from different countries and years.
+        This app allows you to explore population data from different countries and years.
       </Typography>
-      <Typography variant="body1" sx={{ mb: 3 }}>
-        It is built using React,Javascript and Material-UI as the CSS, making it user-friendly and easy to navigate.
-      </Typography>
-      <Typography variant="body1">
-        Have fun exploring the population data in my app!
-      </Typography>
-      <Button variant="contained" color="primary" size="large" sx={{ mt: 3 }}>
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        sx={{ mb: 3 }}
+        component={Link}
+        to="/"
+      >
         Back to Home
       </Button>
+      <Typography variant="body1">
+        Thank you for using my app. Have fun exploring the population data!
+      </Typography>
     </Box>
   );
 };
