@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import { Container, AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import Home from './Home';
 import PopulationData from './PopulationData';
 import PopulationDataSearch from './PopulationDataSearch';
 import AddNewPopulation from './AddNewPopulation';
@@ -32,7 +33,7 @@ const App = () => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            C.J's POPULATION APP
+            CEEJAY'S POPULATION APP
           </Typography>
           <Button color="inherit" component={Link} to="/">
             Home
@@ -45,7 +46,7 @@ const App = () => {
 
       <Container sx={{ mt: 2 }}>
         <Routes>
-          <Route path="/" element={<h1>WELCOME TO C.J'S POPULATION APP.</h1>} />
+          <Route path="/" element={<Home />} />
           <Route
             path="/data"
             element={
