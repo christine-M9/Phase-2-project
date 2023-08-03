@@ -30,10 +30,10 @@ const App = () => {
 
   return (
     <Router>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: '#007bff' }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            CEEJAY'S POPULATION APP
+            C.J's POPULATION APP
           </Typography>
           <Button color="inherit" component={Link} to="/">
             Home
@@ -51,13 +51,28 @@ const App = () => {
             path="/data"
             element={
               <Box>
-                <h1>POPULATION DATA</h1>
+                <Typography variant="h4" sx={{ mb: 3, color: '#007bff' }}>
+                  POPULATION DATA
+                </Typography>
                 <AddNewPopulation onAddPopulation={handleAddPopulation} />
                 <Box>
-                  <h2>ADDED POPULATION</h2>
+                  <Typography variant="h5" sx={{ mt: 4, mb: 2 }}>
+                    ADDED POPULATION
+                  </Typography>
                   {newlyAddedPopulation.map((item, index) => (
-                    <Box key={index} sx={{ border: 1, p: 2, my: 2, backgroundColor: '#f0f0f0' }}>
-                      <Typography variant="h6">ID Year: {item["ID Year"]}</Typography>
+                    <Box
+                      key={index}
+                      sx={{
+                        border: 1,
+                        p: 2,
+                        my: 2,
+                        backgroundColor: '#f0f0f0',
+                        '&:hover': {
+                          backgroundColor: '#e0e0e0',
+                        },
+                      }}
+                    >
+                      <Typography>ID Year: {item["ID Year"]}</Typography>
                       <Typography>ID Nation: {item["ID Nation"]}</Typography>
                       <Typography>Nation: {item.Nation}</Typography>
                       <Typography>Year: {item.Year}</Typography>

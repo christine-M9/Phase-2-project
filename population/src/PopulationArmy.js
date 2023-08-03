@@ -4,7 +4,7 @@ import { Box, Typography, Button } from '@mui/material';
 const PopulationArmy = ({ enlistedPopulation, onRelease }) => {
   return (
     <Box>
-      <Typography variant="h6">POPULATION ARMY</Typography>
+      <Typography variant="h4">POPULATION ARMY</Typography>
       {enlistedPopulation.map((item) => (
         <Box key={item["ID Year"]} sx={{ border: 1, p: 2, my: 2, backgroundColor: '#f0f0f0' }}>
           <Typography>ID Year: {item["ID Year"]}</Typography>
