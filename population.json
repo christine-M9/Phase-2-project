@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "ID Year": "2011",
+      "ID Nation": "13342",
+      "Nation": "Lesotho",
+      "Year": "2011",
+      "Population": "34567654",
+      "Slug Nation": "Lesotho",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
