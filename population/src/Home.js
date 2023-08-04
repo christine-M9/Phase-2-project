@@ -11,7 +11,7 @@ const Home = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        height: '70vh',
         backgroundColor: '#f0f0f0',
         color: '#000',
         textAlign: 'center',

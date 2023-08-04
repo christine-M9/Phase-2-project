@@ -11,7 +11,7 @@ const About = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        height: '70vh',
         backgroundColor: '#f0f0f0',
         color: '#000',
         textAlign: 'center',
@@ -21,7 +21,7 @@ const About = () => {
         ABOUT CEEJAY'S POPULATION DATA APP
       </Typography>
       <Typography variant="body1" sx={{ mb: 3 }}>
-        This app allows you to explore population data from different countries and years.
+        This app allows you to explore and save population data from different countries and years.
       </Typography>
       <Button
         variant="contained"

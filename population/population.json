@@ -319,6 +319,60 @@
       "Population": "2678438",
       "Slug Nation": "S.Africa",
       "id": 36
+    },
+    {
+      "ID Year": "2017",
+      "ID Nation": "12112",
+      "Nation": "Gabon",
+      "Year": "2017",
+      "Population": "4567843",
+      "Slug Nation": "Gabon",
+      "id": 37
+    },
+    {
+      "ID Year": "",
+      "ID Nation": "",
+      "Nation": "",
+      "Year": "",
+      "Population": "",
+      "Slug Nation": "",
+      "id": 38
+    },
+    {
+      "ID Year": "2010",
+      "ID Nation": "12112",
+      "Nation": "Moscow",
+      "Year": "2010",
+      "Population": "4567843",
+      "Slug Nation": "Moscow",
+      "id": 39
+    },
+    {
+      "ID Year": "2009",
+      "ID Nation": "14632",
+      "Nation": "Canada",
+      "Year": "2009",
+      "Population": "456789765",
+      "Slug Nation": "Canada",
+      "id": 40
+    },
+    {
+      "ID Year": "2009",
+      "ID Nation": "2123",
+      "Nation": "Canada",
+      "Year": "2009",
+      "Population": "4567843",
+      "Slug Nation": "Canada",
+      "id": 41
+    },
+    {
+      "ID Year": "2017",
+      "ID Nation": "2123",
+      "Nation": "Moscow",
+      "Year": "2017",
+      "Population": "743856",
+      "Slug Nation": "",
+      "id": 42
     }
   ],
   "comments": [

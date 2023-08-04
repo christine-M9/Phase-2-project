@@ -8,6 +8,7 @@ import PopulationDataSearch from './PopulationDataSearch';
 import AddNewPopulation from './AddNewPopulation';
 import PopulationArmy from './PopulationArmy';
 import About from './About';
+import Index from './index.css';
 
 const App = () => {
   const [enlistedPopulation, setEnlistedPopulation] = React.useState([]);
@@ -26,7 +27,7 @@ const App = () => {
   };
 
   const handleAddPopulation = (newPopulationData) => {
-    // set when the server returns the newly added data with an ID
+    // when the server returns the newly added data with an ID
     setNewlyAddedPopulation((prevNewlyAdded) => [...prevNewlyAdded, newPopulationData]);
   };
 
@@ -34,7 +35,7 @@ const App = () => {
     <Router>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" element="div" sx={{ flexGrow: 1 }}>
             CEEJAY'S POPULATION APP
           </Typography>
           <Button color="inherit" component={Link} to="/">
