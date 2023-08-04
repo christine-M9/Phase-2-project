@@ -1,12 +1,12 @@
 // importing dependencies
 import React from 'react';
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter , Link, Route, Routes} from 'react-router-dom';
 import { Container, AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import Home from './Home';
-import PopulationData from './PopulationData';
 import PopulationDataSearch from './PopulationDataSearch';
 import AddNewPopulation from './AddNewPopulation';
 import PopulationArmy from './PopulationArmy';
+import PopulationData from './PopulationData';
 import About from './About';
 import Index from './index.css';
 
@@ -34,9 +34,9 @@ const App = () => {
     setNewlyAddedPopulation((prevNewlyAdded) => [...prevNewlyAdded, newPopulationData]);
   };
 
-  // JSX and Routing
+  // JSX and Routing (Browserrouter is indicated here so no need of having it in index.js as it wraps this App.js)
   return (
-    <Router>
+    <BrowserRouter>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" element="div" sx={{ flexGrow: 1 }}>
@@ -84,7 +84,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
         </Routes>
       </Container>
-    </Router>
+    </BrowserRouter>
   );
 };
 

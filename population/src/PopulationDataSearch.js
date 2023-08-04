@@ -25,7 +25,7 @@ const PopulationDataSearch = ({ onEnlist }) => {
       });
   };
 
-  // filtering populationdata
+// filtering populationdata
   useEffect(() => {
     const filteredResults = populationData.filter(
       (item) => item.Year.toString() === searchYear
