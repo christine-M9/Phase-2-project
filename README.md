@@ -47,7 +47,7 @@ Ensure that you have;
    git clone <repository>
    ``` 
 
-2. Open the db.json file and run it to get the backend started. 
+2. Open the population.json file and run it to get the backend started. 
 
     ```bash 
     json-server --watch population.json

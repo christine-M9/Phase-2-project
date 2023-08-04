@@ -1,4 +1,3 @@
-// Home.js
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -21,7 +20,7 @@ const Home = () => {
         WELCOME TO CEEJAY'S POPULATION DATA APP
       </Typography>
       <Typography variant="body1" sx={{ mb: 3 }}>
-        Explore population data from different countries and years.
+        Explore and save more population data from different countries and years.
       </Typography>
       <Button
         variant="contained"
