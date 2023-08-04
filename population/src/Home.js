@@ -1,7 +1,9 @@
+// importing dependencies
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
+// JSX And styling
 const Home = () => {
   return (
     <Box
@@ -16,6 +18,8 @@ const Home = () => {
         textAlign: 'center',
       }}
     >
+      
+      {/* Typography component from Material-UI is used to render text elements with different font sizes and styles */}
       <Typography variant="h4" sx={{ mb: 3 }}>
         WELCOME TO CEEJAY'S POPULATION DATA APP
       </Typography>
@@ -27,6 +31,8 @@ const Home = () => {
         color="primary"
         size="large"
         sx={{ mb: 3 }}
+  
+        // component/element link
         component={Link}
         to="/data"
       >
@@ -39,4 +45,5 @@ const Home = () => {
   );
 };
 
+// default exporting
 export default Home;
