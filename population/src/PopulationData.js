@@ -1,15 +1,19 @@
+// importing
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 
+// functional component
 const PopulationData = ({ onEnlist }) => {
   const [populationData, setPopulationData] = React.useState([]);
 
+// state and use effect hook
   React.useEffect(() => {
     fetchPopulationData();
   }, []);
 
   const fetchPopulationData = () => {
-    // Trying fetching data from the API
+
+// Trying fetching data from the API
     fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
       .then((response) => response.json())
       .then((data) => {
@@ -19,7 +23,8 @@ const PopulationData = ({ onEnlist }) => {
       })
       .catch((apiError) => {
         console.error("Failed to fetch data from the API:", apiError);
-        // Fetching from the JSON server if API request fails
+        
+// Fetching from the JSON server if API request fails
         fetch('/population.json')
           .then((response) => response.json())
           .then((data) => {
@@ -33,6 +38,7 @@ const PopulationData = ({ onEnlist }) => {
       });
   };
 
+  // JSX,mapping population data,custom styling
   return (
     <Box>
       {populationData.map((item) => (
@@ -49,4 +55,5 @@ const PopulationData = ({ onEnlist }) => {
   );
 };
 
+// default export
 export default PopulationData;
