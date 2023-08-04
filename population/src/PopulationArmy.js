@@ -1,7 +1,11 @@
+// importing dependencies
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 
+// functional component
 const PopulationArmy = ({ enlistedPopulation, onRelease }) => {
+ 
+ //JSX ,mapping ,custom styling,enlisted population display  
   return (
     <Box>
       <Typography variant="h4">POPULATION ARMY</Typography>
@@ -20,4 +24,5 @@ const PopulationArmy = ({ enlistedPopulation, onRelease }) => {
   );
 };
 
+// default export
 export default PopulationArmy;
