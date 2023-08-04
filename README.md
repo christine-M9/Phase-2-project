@@ -4,7 +4,9 @@
 
   ## Description
 
-1. This web application demonstrates a data React application that uses a public API to fetch population data of a country.
+1. This web application demonstrates a data React application that uses a public API to fetch population data of a country and Json server to
+
+ make a POST request 
 
 2. Adding an individual population data to population army by clicking on it. The selected bot population data is  rendered in the 
 
