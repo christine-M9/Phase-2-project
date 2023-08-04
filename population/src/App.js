@@ -1,4 +1,4 @@
-// App.js
+// importing dependencies
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import { Container, AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
@@ -10,10 +10,12 @@ import PopulationArmy from './PopulationArmy';
 import About from './About';
 import Index from './index.css';
 
+// state
 const App = () => {
   const [enlistedPopulation, setEnlistedPopulation] = React.useState([]);
   const [newlyAddedPopulation, setNewlyAddedPopulation] = React.useState([]);
 
+  // event handling functions
   const handleEnlist = (populationBot) => {
     if (!enlistedPopulation.find((bot) => bot["ID Year"] === populationBot["ID Year"])) {
       setEnlistedPopulation((prevEnlisted) => [...prevEnlisted, populationBot]);
@@ -27,10 +29,12 @@ const App = () => {
   };
 
   const handleAddPopulation = (newPopulationData) => {
-    // when the server returns the newly added data with an ID
+
+   // when the server returns the newly added data with an ID
     setNewlyAddedPopulation((prevNewlyAdded) => [...prevNewlyAdded, newPopulationData]);
   };
 
+  // JSX and Routing
   return (
     <Router>
       <AppBar position="static">
@@ -84,4 +88,5 @@ const App = () => {
   );
 };
 
+// exporting(default method)
 export default App;
