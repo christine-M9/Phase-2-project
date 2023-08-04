@@ -1,6 +1,8 @@
+// importing dependancies
 import React from 'react';
 import { Box, TextField, Button, Typography } from '@mui/material';
 
+// functional component and state
 const AddNewPopulation = ({ onAddPopulation }) => {
   const [newPopulationData, setNewPopulationData] = React.useState({
     "ID Year": "",
@@ -11,6 +13,7 @@ const AddNewPopulation = ({ onAddPopulation }) => {
     "Slug Nation": ""
   });
 
+  //handle change function 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setNewPopulationData((prevData) => ({
@@ -19,8 +22,11 @@ const AddNewPopulation = ({ onAddPopulation }) => {
     }));
   };
 
+// handle submit function
   const handleSubmit = () => {
     console.log("Submitting data:", newPopulationData); // Debugging line
+
+// POST request
     fetch('http://localhost:3000/posts', {
       method: 'POST',
       headers: {
@@ -41,11 +47,9 @@ const AddNewPopulation = ({ onAddPopulation }) => {
           "Slug Nation": ""
         });
       })
-      .catch((error) => {
-        console.error("Failed to add data to the JSON server:", error);
-      });
+          
   };
-
+//  JSX
   return (
     <Box>
       <Typography variant="h6">ADD POPULATION</Typography>
@@ -92,4 +96,5 @@ const AddNewPopulation = ({ onAddPopulation }) => {
   );
 };
 
+// exporting (using default type)
 export default AddNewPopulation;
